@@ -219,9 +219,11 @@ public class CheckoutPage extends BasePage {
 
 ---
 
-## CI/CD (Parallel by Tags)
+## CI/CD (Parallel Execution)
 
-Split tests by tag across jobs for maximum parallelism:
+### Option 1: Split by Tags (Recommended)
+
+Separate jobs by tag — each runs in parallel:
 
 ```yaml
 name: E2E Tests
@@ -240,10 +242,9 @@ jobs:
       - name: Install Playwright browsers
         run: npm install -g playwright && ./gradlew dependencies && npm exec -- playwright install chromium
       - name: Run smoke tests
-        run: ./gradlew test -Dcucumber.filter.tags="@smoke"
+        run: ./gradlew test -Dparallelism=4 -Dcucumber.filter.tags="@smoke"
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: allure-results-smoke
           path: build/allure-results/
@@ -259,19 +260,55 @@ jobs:
       - name: Install Playwright browsers
         run: npm install -g playwright && ./gradlew dependencies && npm exec -- playwright install chromium
       - name: Run regression tests
-        run: ./gradlew test -Dcucumber.filter.tags="@regression"
+        run: ./gradlew test -Dparallelism=4 -Dcucumber.filter.tags="@regression"
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: allure-results-regression
           path: build/allure-results/
 ```
 
-Parallelism within each job:
+### Option 2: Matrix Strategy
+
+Use matrix for simple parallelization:
+
+```yaml
+name: E2E Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        tags: ["@smoke", "@regression"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Install Playwright browsers
+        run: npm install -g playwright && ./gradlew dependencies && npm exec -- playwright install chromium
+      - name: Run tests
+        run: ./gradlew test -Dparallelism=4 -Dcucumber.filter.tags="${{ matrix.tags }}"
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ matrix.tags }}
+          path: build/allure-results/
+```
+
+### Local Parallel Testing
 
 ```bash
-./gradlew test -Dparallelism=4 -Dcucumber.filter.tags="@smoke"
+# Single job, multiple threads
+./gradlew test -Dparallelism=4
+
+# Split by tags locally
+./gradlew test -Dparallelism=2 -Dcucumber.filter.tags="@smoke"
 ```
 
 ---

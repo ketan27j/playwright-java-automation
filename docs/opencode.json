@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.schema.json",
+
+  "model": "ollama/qwen3-coder-next",
+
+  "provider": {
+    "ollama": {
+      "name": "Ollama (local)",
+      "type": "ollama",
+      "baseURL": "http://localhost:11434/v1",
+      "models": {
+        "qwen3-coder-next": {
+          "name": "qwen3-coder-next",
+          "contextLength": 32768
+        }
+      }
+    }
+  },
+
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest", "--headless"],
+      "env": {}
+    }
+  }
+}
