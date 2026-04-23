@@ -1,0 +1,93 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group = 'com.framework'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    playwrightVersion    = '1.44.0'
+    cucumberVersion      = '7.18.0'
+    junitVersion         = '5.10.2'
+    junitPlatformSuiteVersion = '1.10.5'
+    allureVersion        = '2.27.0'
+    slf4jVersion         = '2.0.13'
+    logbackVersion       = '1.5.6'
+}
+
+def junitPlatformSuiteVersion = '1.10.5'
+
+dependencies {
+    // Playwright
+    testImplementation "com.microsoft.playwright:playwright:${playwrightVersion}"
+
+    // Cucumber
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}"
+
+    // JUnit 5
+    testImplementation "org.junit.platform:junit-platform-suite:${junitPlatformSuiteVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly    "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+    // Allure + Cucumber integration
+    testImplementation "io.qameta.allure:allure-cucumber7-jvm:${allureVersion}"
+    testImplementation "io.qameta.allure:allure-junit-platform:${allureVersion}"
+
+    // Logging
+    testImplementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    testRuntimeOnly    "ch.qos.logback:logback-classic:${logbackVersion}"
+
+    // Utilities
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'com.typesafe:config:1.4.3'
+}
+
+allure {
+    adapter {
+        aspectjVersion = '1.9.22'
+        autoconfigure = true
+    }
+    version = "${allureVersion}"
+}
+
+test {
+    useJUnitPlatform()
+
+    // Parallel execution — one thread per CPU core (tune as needed)
+    systemProperty 'cucumber.execution.parallel.enabled', 'true'
+    systemProperty 'cucumber.execution.parallel.config.strategy', 'fixed'
+    systemProperty 'cucumber.execution.parallel.config.fixed.parallelism',
+            System.getProperty('parallelism', String.valueOf(Runtime.runtime.availableProcessors()))
+
+    // Pass env system properties through
+    systemProperty 'env', System.getProperty('env', 'staging')
+    systemProperty 'headless', System.getProperty('headless', 'true')
+    systemProperty 'browser', System.getProperty('browser', 'chromium')
+
+    // Allure results dir
+    systemProperty 'allure.results.directory', "${buildDir}/allure-results"
+
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        showStandardStreams = false
+    }
+}
+
+// Convenience task: clean + test + allureReport
+tasks.register('runTests') {
+    dependsOn clean, test, allureReport
+    tasks.findByName('test').mustRunAfter(clean)
+    tasks.findByName('allureReport').mustRunAfter(test)
+}
