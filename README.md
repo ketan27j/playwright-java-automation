@@ -56,59 +56,52 @@ src/test/
 ### 1. Prerequisites
 
 - Java 21+
-- Gradle 8+
-- Allure CLI (for report serving): `npm i -g allure-commandline`
+- Gradle 8+ (wrapper included)
+- Node.js 18+ (for Playwright CLI)
 
-### 2. Install Playwright browsers
+### 2. Platform Setup
 
-Playwright bundles its own browser binaries. Install them once:
-
-```bash
-# Run this after first build to install browser binaries
-./gradlew test --tests "com.framework.TestRunner" -x test
-# Or manually:
-java -cp build/libs/*.jar com.microsoft.playwright.CLI install chromium
-```
-
-Simpler approach — add this to your CI or run once locally:
+#### Linux / macOS
 
 ```bash
+# Clone and navigate to project
+git clone <repo-url>
+cd playwright-java-automation
+
+# Make gradlew executable
+chmod +x gradlew
+
+# Download dependencies and install browsers
 ./gradlew dependencies
-# Then:
-java -jar $(find ~/.gradle -name "playwright-*.jar" | head -1) install chromium
+npx playwright install chromium
 ```
 
-Or use the Playwright CLI directly after the first Gradle build:
+#### Windows
 
-```bash
-./gradlew build -x test
-# Playwright install command via the bundled CLI:
-java -cp $(./gradlew -q printClasspath) com.microsoft.playwright.CLI install
+```powershell
+# Clone and navigate to project
+git clone <repo-url>
+cd playwright-java-automation
+
+# Use gradlew.bat (included)
+.\gradlew.bat dependencies
+npx playwright install chromium
 ```
 
 ### 3. Run tests
 
 ```bash
-# Run all tests (staging, chromium, headless)
+# Default (staging, headless)
 ./gradlew test
 
-# Run with a specific environment
-./gradlew test -Denv=prod
+# With custom URL
+./gradlew test -Dbase.url=https://www.saucedemo.com
 
-# Run in headed mode (see the browser)
+# See browser in action
 ./gradlew test -Dheadless=false
-
-# Run with Firefox
-./gradlew test -Dbrowser=firefox
-
-# Control parallelism (default = CPU core count)
-./gradlew test -Dparallelism=2
 
 # Run only @smoke tagged scenarios
 ./gradlew test -Dcucumber.filter.tags="@smoke"
-
-# Run smoke tests on prod in headed Firefox
-./gradlew test -Denv=prod -Dbrowser=firefox -Dheadless=false -Dcucumber.filter.tags="@smoke"
 
 # Full pipeline: clean → test → allure report
 ./gradlew runTests
@@ -119,10 +112,10 @@ java -cp $(./gradlew -q printClasspath) com.microsoft.playwright.CLI install
 ```bash
 # Generate and open report
 ./gradlew allureReport
-allure open build/reports/allure-report
+npx allure open build/reports/allure-report
 
 # Or serve live
-allure serve build/allure-results
+npx allure serve build/allure-results
 ```
 
 ### 5. View Playwright traces
@@ -239,9 +232,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Install Playwright browsers
-        run: ./gradlew dependencies && \
-             java -cp $(./gradlew -q printClasspath 2>/dev/null | tail -1) \
-             com.microsoft.playwright.CLI install --with-deps chromium
+        run: ./gradlew dependencies && npx playwright install chromium
 
       - name: Run tests
         run: ./gradlew test -Dparallelism=4
@@ -266,8 +257,8 @@ jobs:
 ## Troubleshooting
 
 **Browser not found**
-```
-Run: java -cp <classpath> com.microsoft.playwright.CLI install chromium
+```bash
+npx playwright install chromium
 ```
 
 **Parallel scenarios interfering**
@@ -276,12 +267,6 @@ Run: java -cp <classpath> com.microsoft.playwright.CLI install chromium
 
 **Allure report empty**
 ```bash
-# Check results exist
 ls build/allure-results/
-# Regenerate
 ./gradlew allureReport
 ```
-
-**Traces not appearing**
-- Check `playwright.tracing=true` in your config
-- Check `build/traces/` directory exists after the run
