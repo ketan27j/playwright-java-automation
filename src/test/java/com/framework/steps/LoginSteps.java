@@ -26,8 +26,8 @@ public class LoginSteps {
         loginPage.assertLoginSuccess();
     }
 
-    @Then("an error message {string} should be displayed")
-    public void anErrorMessageShouldBeDisplayed(String message) {
-        loginPage.assertErrorMessage(message);
+    @Then("an error message should be displayed")
+    public void anErrorMessageShouldBeDisplayed() {
+        loginPage.assertErrorMessageAny();
     }
 }

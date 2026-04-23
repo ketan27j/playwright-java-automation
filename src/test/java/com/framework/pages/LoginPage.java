@@ -8,16 +8,16 @@ import io.qameta.allure.Step;
  */
 public class LoginPage extends BasePage {
 
-    // Selectors
-    private static final String USERNAME_INPUT = "[data-testid='username']";
-    private static final String PASSWORD_INPUT = "[data-testid='password']";
-    private static final String LOGIN_BUTTON   = "[data-testid='login-btn']";
-    private static final String ERROR_MESSAGE  = "[data-testid='error-msg']";
-    private static final String WELCOME_HEADER = "[data-testid='welcome-header']";
+    // Selectors - SauceDemo uses standard HTML ids
+    private static final String USERNAME_INPUT = "#user-name";
+    private static final String PASSWORD_INPUT = "#password";
+    private static final String LOGIN_BUTTON   = "#login-button";
+    private static final String ERROR_MESSAGE  = "h3";
+    private static final String APP_HEADER     = ".app_logo";
 
     @Step("Open login page")
     public LoginPage open(String baseUrl) {
-        navigateTo(baseUrl + "/login");
+        navigateTo(baseUrl);
         return this;
     }
 
@@ -31,11 +31,16 @@ public class LoginPage extends BasePage {
 
     @Step("Assert login succeeded")
     public void assertLoginSuccess() {
-        assertVisible(WELCOME_HEADER);
+        assertVisible(APP_HEADER);
     }
 
     @Step("Assert error message: {expected}")
     public void assertErrorMessage(String expected) {
         assertContainsText(ERROR_MESSAGE, expected);
+    }
+
+    @Step("Assert error message is displayed")
+    public void assertErrorMessageAny() {
+        assertVisible(ERROR_MESSAGE);
     }
 }

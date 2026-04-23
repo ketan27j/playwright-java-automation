@@ -24,6 +24,7 @@ public class ConfigManager {
         String env      = System.getProperty("env", "staging");
         String browser  = System.getProperty("browser", "chromium");
         String headless = System.getProperty("headless", "true");
+        String baseUrlOverride = System.getProperty("base.url");
 
         log.info("Loading config  env={} browser={} headless={}", env, browser, headless);
 
@@ -35,10 +36,12 @@ public class ConfigManager {
                 ? ConfigFactory.parseFile(envFile).withFallback(base)
                 : base;
 
-        // System property overrides win over everything
-        CONFIG = ConfigFactory.systemProperties()
-                .withFallback(envOverride)
-                .resolve();
+        // Apply system property overrides before resolve
+        if (baseUrlOverride != null) {
+            System.setProperty("base.url", baseUrlOverride);
+        }
+
+        CONFIG = ConfigFactory.systemProperties().withFallback(envOverride).resolve();
     }
 
     private ConfigManager() {}
