@@ -28,15 +28,21 @@ npx playwright show-trace build/traces/<scenario-name>.zip
 
 ## Browser Installation (Required Before First Run)
 
-Playwright browsers are bundled, not system-installed. Run after first build:
+```bash
+./gradlew dependencies
+npx playwright install chromium
+```
+
+## CI Parallel Strategy
+
+Split by tags across jobs:
 
 ```bash
-# Option 1: via Gradle
-./gradlew dependencies
-java -cp $(find ~/.gradle -name "playwright-*.jar" | head -1) install chromium
+# Job 1: Smoke tests
+./gradlew test -Dcucumber.filter.tags="@smoke"
 
-# Option 2: via bundled CLI
-java -cp $(./gradlew -q printClasspath) com.microsoft.playwright.CLI install chromium
+# Job 2: Regression tests
+./gradlew test -Dcucumber.filter.tags="@regression"
 ```
 
 ## Thread Safety Rule

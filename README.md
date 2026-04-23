@@ -213,7 +213,9 @@ public class CheckoutPage extends BasePage {
 
 ---
 
-## CI/CD (GitHub Actions example)
+## CI/CD (Parallel by Tags)
+
+Split tests by tag across jobs for maximum parallelism:
 
 ```yaml
 name: E2E Tests
@@ -221,35 +223,49 @@ name: E2E Tests
 on: [push, pull_request]
 
 jobs:
-  test:
+  smoke:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
-
       - name: Install Playwright browsers
         run: ./gradlew dependencies && npx playwright install chromium
-
-      - name: Run tests
-        run: ./gradlew test -Dparallelism=4
-
+      - name: Run smoke tests
+        run: ./gradlew test -Dcucumber.filter.tags="@smoke"
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: allure-results
-          path: build/allure-results
+          name: allure-results-smoke
+          path: build/allure-results/
 
-      - name: Upload traces (on failure)
-        uses: actions/upload-artifact@v4
-        if: failure()
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
-          name: playwright-traces
-          path: build/traces/
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Install Playwright browsers
+        run: ./gradlew dependencies && npx playwright install chromium
+      - name: Run regression tests
+        run: ./gradlew test -Dcucumber.filter.tags="@regression"
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results-regression
+          path: build/allure-results/
+```
+
+Parallelism within each job:
+
+```bash
+./gradlew test -Dparallelism=4 -Dcucumber.filter.tags="@smoke"
 ```
 
 ---
