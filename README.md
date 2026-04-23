@@ -71,9 +71,12 @@ cd playwright-java-automation
 # Make gradlew executable
 chmod +x gradlew
 
+# Install Playwright globally (one-time)
+npm install -g playwright
+
 # Download dependencies and install browsers
 ./gradlew dependencies
-npx playwright install chromium
+npm exec -- playwright install chromium
 ```
 
 #### Windows
@@ -83,9 +86,12 @@ npx playwright install chromium
 git clone <repo-url>
 cd playwright-java-automation
 
-# Use gradlew.bat (included)
+# Install Playwright globally (one-time)
+npm install -g playwright
+
+# Download dependencies and install browsers
 .\gradlew.bat dependencies
-npx playwright install chromium
+npm exec -- playwright install chromium
 ```
 
 ### 3. Run tests
@@ -232,7 +238,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Install Playwright browsers
-        run: ./gradlew dependencies && npx playwright install chromium
+        run: npm install -g playwright && ./gradlew dependencies && npm exec -- playwright install chromium
       - name: Run smoke tests
         run: ./gradlew test -Dcucumber.filter.tags="@smoke"
       - name: Upload Allure results
@@ -251,7 +257,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Install Playwright browsers
-        run: ./gradlew dependencies && npx playwright install chromium
+        run: npm install -g playwright && ./gradlew dependencies && npm exec -- playwright install chromium
       - name: Run regression tests
         run: ./gradlew test -Dcucumber.filter.tags="@regression"
       - name: Upload Allure results
@@ -274,7 +280,8 @@ Parallelism within each job:
 
 **Browser not found**
 ```bash
-npx playwright install chromium
+npm install -g playwright
+npm exec -- playwright install chromium
 ```
 
 **Parallel scenarios interfering**
