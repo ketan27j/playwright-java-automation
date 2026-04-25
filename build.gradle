@@ -62,6 +62,7 @@ allure {
 
 test {
     useJUnitPlatform()
+    outputs.upToDateWhen { false }
 
     // Parallel execution — one thread per CPU core (tune as needed)
     systemProperty 'cucumber.execution.parallel.enabled', 'true'

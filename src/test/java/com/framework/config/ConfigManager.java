@@ -24,7 +24,7 @@ public class ConfigManager {
         String env      = System.getProperty("env", "staging");
         String browser  = System.getProperty("browser", "chromium");
         String headless = System.getProperty("headless", "true");
-        String baseUrlOverride = System.getProperty("base.url");
+        String baseUrlOverride = System.getProperty("base.url", "https://www.saucedemo.com");
 
         log.info("Loading config  env={} browser={} headless={}", env, browser, headless);
 
