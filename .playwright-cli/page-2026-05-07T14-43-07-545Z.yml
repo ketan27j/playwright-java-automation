@@ -1,0 +1,216 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "CommentHook CommentHook" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "CommentHook" [ref=e5]
+        - generic [ref=e6]: CommentHook
+      - navigation [ref=e7]:
+        - link "Pricing" [ref=e8] [cursor=pointer]:
+          - /url: /#pricing
+        - link "Blog" [ref=e9] [cursor=pointer]:
+          - /url: /blog
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Privacy Policy" [level=1] [ref=e12]
+      - paragraph [ref=e13]: "Last updated: May 2, 2026"
+      - paragraph [ref=e14]: CommentHook ("we", "us", or "our") operates the CommentHook Instagram DM automation platform. This Privacy Policy explains what data we collect, how we use it, and the choices you have regarding your information. By using CommentHook, you agree to the practices described here.
+      - heading "1. Information We Collect" [level=2] [ref=e15]
+      - heading "1a. Account information" [level=3] [ref=e16]
+      - paragraph [ref=e17]: "When you register, we collect:"
+      - list [ref=e18]:
+        - listitem [ref=e19]: Your name, email address and password (email may be absent for Instagram-only sign-ups)
+        - listitem [ref=e20]: A bcrypt-hashed password (email/password accounts only)
+        - listitem [ref=e21]: Your Google account ID and profile name (Google OAuth accounts only)
+        - listitem [ref=e22]: Your Instagram user ID and username (Instagram OAuth accounts only)
+        - listitem [ref=e23]: Your communication preferences and notification settings
+      - heading "1b. Connected Instagram accounts" [level=3] [ref=e24]
+      - paragraph [ref=e25]: "When you connect an Instagram Business or Creator account, we collect and store:"
+      - list [ref=e26]:
+        - listitem [ref=e27]: Instagram Business Account ID (igUserId) and username
+        - listitem [ref=e28]: A long-lived Instagram user access token — stored AES-256-GCM encrypted at rest
+        - listitem [ref=e29]: Webhook subscription status
+      - heading "1c. Automation activity" [level=3] [ref=e30]
+      - paragraph [ref=e31]: "When your automations run, we collect:"
+      - list [ref=e32]:
+        - listitem [ref=e33]: Comment text and commenter user IDs that matched a keyword trigger
+        - listitem [ref=e34]: "DM logs: recipient user ID, timestamp, trigger type (post comment, live comment, DM, story reply), whether AI or template was used"
+        - listitem [ref=e35]: Link tracking codes and click timestamps when you enable tracked short links
+        - listitem [ref=e36]: Story seen timestamps (seenAt) when story-reply automations are used
+      - heading "1d. Billing information" [level=3] [ref=e37]
+      - paragraph [ref=e38]: Payments are processed securely through Stripe (international cards) and Razorpay (India). We do not store full card numbers or bank details on our servers. We retain your Stripe or Razorpay customer ID and subscription status.
+      - heading "1e. Automatically collected information" [level=3] [ref=e39]
+      - paragraph [ref=e40]: "We automatically collect the following when you use the Service:"
+      - list [ref=e41]:
+        - listitem [ref=e42]:
+          - strong [ref=e43]: "Usage data and analytics:"
+          - text: Pages visited, features used, actions taken, and timestamps.
+        - listitem [ref=e44]:
+          - strong [ref=e45]: "Device information:"
+          - text: IP address, browser type and version, and operating system.
+        - listitem [ref=e46]:
+          - strong [ref=e47]: "Cookies and similar technologies:"
+          - text: Session identifiers and localStorage tokens used to keep you logged in and remember your active account preference. See Section 8 for details.
+        - listitem [ref=e48]:
+          - strong [ref=e49]: "Instagram engagement metrics and automation performance data:"
+          - text: DM delivery counts, comment trigger counts, link click rates, and other metrics displayed in your dashboard.
+      - heading "1f. Customer support" [level=3] [ref=e50]
+      - paragraph [ref=e51]: When you contact us for support, we collect and retain the contents of your messages and any attachments you provide, along with your contact details, in order to resolve your inquiry.
+      - heading "2. How We Use Your Information" [level=2] [ref=e52]
+      - list [ref=e53]:
+        - listitem [ref=e54]:
+          - strong [ref=e55]: "Service delivery:"
+          - text: Send automated DMs, post comment replies, and track link clicks on your behalf using the Meta Graph API.
+        - listitem [ref=e56]:
+          - strong [ref=e57]: "Dashboard analytics:"
+          - text: Display your DM counts, contacts, conversion metrics, and automation performance in your dashboard.
+        - listitem [ref=e58]:
+          - strong [ref=e59]: "AI-generated messages:"
+          - text: If you are on a paid plan and have set an AI product description, your product description and the triggering comment are sent to OpenRouter to generate a personalised DM. No other personal data is shared with OpenRouter.
+        - listitem [ref=e60]:
+          - strong [ref=e61]: "Billing and plan enforcement:"
+          - text: Track your subscription tier, apply plan limits (DM caps, watermarks), and process payments via Stripe and Razorpay.
+        - listitem [ref=e62]:
+          - strong [ref=e63]: "Security and fraud prevention:"
+          - text: Detect abuse, protect your account, and comply with legal obligations.
+        - listitem [ref=e64]:
+          - strong [ref=e65]: "Service improvement:"
+          - text: Diagnose bugs, identify usage trends, and improve platform reliability and user experience. Log data is stored in Grafana Loki and retained for 30 days.
+        - listitem [ref=e66]:
+          - strong [ref=e67]: "Communications:"
+          - text: Send transactional emails (password reset, billing receipts). We will not send marketing emails without your consent.
+        - listitem [ref=e68]:
+          - strong [ref=e69]: "Instagram API compliance:"
+          - text: Ensure our use of your Instagram data complies with Meta's Platform Terms and Developer Policies.
+        - listitem [ref=e70]:
+          - strong [ref=e71]: "Business transfers:"
+          - text: In the event of a merger, acquisition, or sale of all or a portion of our assets, your data may be transferred as part of that transaction. See Section 3 for details.
+      - heading "3. How We Share Your Information" [level=2] [ref=e72]
+      - paragraph [ref=e73]: "We do not sell your personal data. We share data only with:"
+      - list [ref=e74]:
+        - listitem [ref=e75]:
+          - strong [ref=e76]: "Meta / Instagram:"
+          - text: Your access token is used to call the Meta Graph API (
+          - code [ref=e77]: graph.instagram.com
+          - text: ) to send DMs and subscribe to webhooks on your behalf.
+        - listitem [ref=e78]:
+          - strong [ref=e79]: "Stripe / Razorpay:"
+          - text: Payment processing for subscriptions. International payments go through Stripe; Indian payments go through Razorpay. Governed by
+          - link "Stripe's Privacy Policy" [ref=e80] [cursor=pointer]:
+            - /url: https://stripe.com/privacy
+          - text: and
+          - link "Razorpay's Privacy Policy" [ref=e81] [cursor=pointer]:
+            - /url: https://razorpay.com/privacy/
+          - text: .
+        - listitem [ref=e82]:
+          - strong [ref=e83]: "OpenRouter:"
+          - text: If AI message generation is enabled, your automation's product description and the triggering comment text are sent to OpenRouter. No account identifiers are included. Governed by
+          - link "OpenRouter's Privacy Policy" [ref=e84] [cursor=pointer]:
+            - /url: https://openrouter.ai/privacy
+          - text: .
+        - listitem [ref=e85]:
+          - strong [ref=e86]: "Service providers:"
+          - text: We may engage third-party vendors to help us operate the platform (for example, hosting, monitoring, and customer support tooling). These providers access your data only as necessary to perform their functions and are contractually required to protect it.
+        - listitem [ref=e87]:
+          - strong [ref=e88]: "Business transfers:"
+          - text: If CommentHook is involved in a merger, acquisition, financing, or sale of assets, your personal data may be transferred to the acquiring entity. We will provide notice before your data becomes subject to a materially different privacy policy.
+        - listitem [ref=e89]:
+          - strong [ref=e90]: "Legal requirements:"
+          - text: We may disclose data if required by law, court order, or to protect the rights, property, or safety of CommentHook, our users, or the public. This includes complying with legal obligations, preventing or investigating wrongdoing, and protecting against legal liability.
+        - listitem [ref=e91]:
+          - strong [ref=e92]: "With your consent:"
+          - text: We may share your data for any other purpose with your explicit consent.
+      - heading "4. Data Security" [level=2] [ref=e93]
+      - paragraph [ref=e94]: "We take security seriously:"
+      - list [ref=e95]:
+        - listitem [ref=e96]: All Instagram access tokens are encrypted with AES-256-GCM before being written to the database. The encryption key is never stored in the database.
+        - listitem [ref=e97]: All traffic between your browser, our servers, and the Meta API is encrypted via HTTPS/TLS.
+        - listitem [ref=e98]: Passwords are hashed using bcrypt with a cost factor of 12 — we never store plaintext passwords.
+        - listitem [ref=e99]: Database access is restricted to application servers only; no public database endpoints are exposed.
+      - paragraph [ref=e100]:
+        - text: No system is perfectly secure. If you suspect unauthorized access to your account, please contact us immediately at
+        - link "support@commenthook.com" [ref=e101] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: .
+      - heading "5. Data Retention" [level=2] [ref=e102]
+      - list [ref=e103]:
+        - listitem [ref=e104]:
+          - strong [ref=e105]: "DM logs:"
+          - text: Retained for 90 days, then automatically deleted.
+        - listitem [ref=e106]:
+          - strong [ref=e107]: "Account and automation data:"
+          - text: Retained until you delete your account or request deletion.
+        - listitem [ref=e108]:
+          - strong [ref=e109]: "Application logs:"
+          - text: Retained for 30 days in Grafana Loki.
+        - listitem [ref=e110]:
+          - strong [ref=e111]: "Billing records:"
+          - text: Retained as required by applicable tax law (typically 7 years in India).
+      - paragraph [ref=e112]: After your account is deleted, we may retain certain data where we have a legal obligation or legitimate business reason to do so (for example, to resolve disputes or enforce our agreements). Usage data is generally retained for a shorter period unless required for security or legal purposes.
+      - heading "6. Your Rights" [level=2] [ref=e113]
+      - paragraph [ref=e114]: "You have the following rights regarding your data:"
+      - list [ref=e115]:
+        - listitem [ref=e116]:
+          - strong [ref=e117]: "Access:"
+          - text: Request a copy of the data we hold about you.
+        - listitem [ref=e118]:
+          - strong [ref=e119]: "Correction:"
+          - text: Request that inaccurate data be corrected. You can also update your account information at any time from the Settings page.
+        - listitem [ref=e120]:
+          - strong [ref=e121]: "Deletion:"
+          - text: Request deletion of all your personal data. You can trigger this from the Settings page ("Delete my account") or by emailing
+          - link "support@commenthook.com" [ref=e122] [cursor=pointer]:
+            - /url: mailto:support@commenthook.com
+          - text: . Deletion removes your account, automations, connected Instagram accounts, and DM logs. Billing records required by law are excluded.
+        - listitem [ref=e123]:
+          - strong [ref=e124]: "Portability:"
+          - text: Request an export of your automation configurations and DM log data.
+        - listitem [ref=e125]:
+          - strong [ref=e126]: "Opt-out of marketing:"
+          - text: Use the unsubscribe link in any marketing email or contact us directly.
+      - paragraph [ref=e127]:
+        - text: To exercise any of these rights, email
+        - link "support@commenthook.com" [ref=e128] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: . We will respond within 30 days.
+      - heading "7. Instagram and Meta Platform Policy" [level=2] [ref=e129]
+      - paragraph [ref=e130]:
+        - text: Our use of Instagram data is governed by the
+        - link "Meta Platform Terms" [ref=e131] [cursor=pointer]:
+          - /url: https://developers.facebook.com/policy/
+        - text: and the
+        - link "Meta Developer Policies" [ref=e132] [cursor=pointer]:
+          - /url: https://developers.facebook.com/devpolicy/
+        - text: . We request only the minimum Instagram permissions necessary to operate the service. We do not use Instagram data for advertising or to build user profiles beyond what is needed to power your automations.
+      - paragraph [ref=e133]:
+        - text: You can revoke CommentHook's access to your Instagram account at any time via your Instagram account's
+        - strong [ref=e134]: Settings → Apps and Websites
+        - text: page, or by disconnecting the account in CommentHook's Settings.
+      - heading "8. Cookies" [level=2] [ref=e135]
+      - paragraph [ref=e136]: The CommentHook dashboard uses localStorage (not third-party cookies) to store your session token and active account preference. The marketing site (this site) does not set any tracking cookies. We do not use advertising or analytics cookies.
+      - heading "9. Children" [level=2] [ref=e137]
+      - paragraph [ref=e138]:
+        - text: CommentHook is not directed at children under 13. We do not knowingly collect data from anyone under 13. If we become aware that a user is under 13, we will delete their account immediately. If you are a parent or guardian and believe your child has provided us with personal data, please contact us at
+        - link "support@commenthook.com" [ref=e139] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: . Where applicable law requires parental consent for processing a minor's data, we will obtain that consent before collecting or using such information.
+      - heading "10. Data Storage Location" [level=2] [ref=e140]
+      - paragraph [ref=e141]: Your data is stored on servers located in India. If you access our service from outside India, your data will be transferred to and processed in India. By using CommentHook, you consent to this transfer. We take all steps reasonably necessary to ensure your data is handled securely and in accordance with this Privacy Policy.
+      - heading "11. Third-Party Links" [level=2] [ref=e142]
+      - paragraph [ref=e143]: Our platform and communications may contain links to third-party websites (for example, Stripe, Razorpay, or OpenRouter). We have no control over and assume no responsibility for the content or privacy practices of those sites. We encourage you to review the privacy policy of any third-party site you visit.
+      - heading "12. Changes to This Policy" [level=2] [ref=e144]
+      - paragraph [ref=e145]: We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page and, for material changes, notify you by email. Continued use of the service after changes constitutes acceptance of the updated policy.
+      - heading "13. Contact" [level=2] [ref=e146]
+      - paragraph [ref=e147]:
+        - text: Questions, concerns, or requests? Reach us at
+        - link "support@commenthook.com" [ref=e148] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: .
+  - contentinfo [ref=e149]:
+    - generic [ref=e150]:
+      - generic [ref=e151]: © 2026 CommentHook. All rights reserved.
+      - generic [ref=e152]:
+        - link "Privacy" [ref=e153] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e154] [cursor=pointer]:
+          - /url: /terms

@@ -59,4 +59,29 @@ public abstract class BasePage {
                     "Expected element '%s' to contain '%s' but got '%s'".formatted(selector, expected, actual));
         }
     }
+
+    @Step("Get page title")
+    protected String getTitle() {
+        return page().title();
+    }
+
+    @Step("Get current URL")
+    protected String getCurrentUrl() {
+        return page().url();
+    }
+
+    @Step("Get attribute '{attr}' of '{selector}'")
+    protected String getAttribute(String selector, String attr) {
+        return page().locator(selector).getAttribute(attr);
+    }
+
+    @Step("Check element visible: {selector}")
+    protected boolean isVisible(String selector) {
+        return page().locator(selector).isVisible();
+    }
+
+    @Step("Count elements matching: {selector}")
+    protected int getCount(String selector) {
+        return page().locator(selector).count();
+    }
 }

@@ -1,0 +1,175 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "CommentHook CommentHook" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "CommentHook" [ref=e5]
+        - generic [ref=e6]: CommentHook
+      - navigation [ref=e7]:
+        - link "Pricing" [ref=e8] [cursor=pointer]:
+          - /url: /#pricing
+        - link "Blog" [ref=e9] [cursor=pointer]:
+          - /url: /blog
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - paragraph [ref=e12]: Instagram DM Automation
+      - heading "Turn every comment into a conversation. Every conversation into a customer." [level=1] [ref=e13]:
+        - text: Turn every comment
+        - text: into a conversation.
+        - text: Every conversation into a customer.
+      - paragraph [ref=e14]:
+        - text: The only Instagram automation tool that qualifies leads
+        - emphasis [ref=e15]: before
+        - text: sending a link — with AI-generated DMs, follow-gate, and flat-rate pricing built for Indian creators.
+      - generic [ref=e16]:
+        - link "Start free — no credit card" [ref=e17] [cursor=pointer]:
+          - /url: https://app.commenthook.com/register
+        - link "See how it works →" [ref=e18] [cursor=pointer]:
+          - /url: "#how-it-works"
+    - generic [ref=e20]:
+      - heading "Set up in 3 minutes" [level=2] [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: "1"
+          - heading "Connect Instagram" [level=3] [ref=e25]
+          - paragraph [ref=e26]: Link your Professional account with one click via Facebook OAuth.
+        - generic [ref=e27]:
+          - generic [ref=e28]: "2"
+          - heading "Set a keyword" [level=3] [ref=e29]
+          - paragraph [ref=e30]: Choose a word (e.g. "LINK"). Anyone who comments it triggers your automation.
+        - generic [ref=e31]:
+          - generic [ref=e32]: "3"
+          - heading "AI sends the DM" [level=3] [ref=e33]
+          - paragraph [ref=e34]: CommentHook instantly DMs a natural, personalised message with your link.
+    - generic [ref=e35]:
+      - heading "Why creators choose CommentHook" [level=2] [ref=e36]
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]: 🤖
+          - generic [ref=e40]:
+            - heading "AI-written DMs" [level=3] [ref=e41]
+            - paragraph [ref=e42]: Describe your offer in plain English. AI writes a natural DM for every commenter — no templates, no robotic copy.
+        - generic [ref=e43]:
+          - generic [ref=e44]: 🔒
+          - generic [ref=e45]:
+            - heading "Follow-gate" [level=3] [ref=e46]
+            - paragraph [ref=e47]: Only send your link to people who follow you. Everyone else gets a friendly "follow first" nudge.
+        - generic [ref=e48]:
+          - generic [ref=e49]: ⚡
+          - generic [ref=e50]:
+            - heading "Responds in seconds" [level=3] [ref=e51]
+            - paragraph [ref=e52]: Every keyword comment triggers an instant DM. No manual replies, no missed leads.
+        - generic [ref=e53]:
+          - generic [ref=e54]: 📊
+          - generic [ref=e55]:
+            - heading "Simple dashboard" [level=3] [ref=e56]
+            - paragraph [ref=e57]: See how many DMs sent, which posts are driving leads, and which keywords are performing.
+        - generic [ref=e58]:
+          - generic [ref=e59]: 🇮🇳
+          - generic [ref=e60]:
+            - heading "INR pricing" [level=3] [ref=e61]
+            - paragraph [ref=e62]: Pay in Indian Rupees. ₹499/month instead of $19. Built for Indian creators.
+        - generic [ref=e63]:
+          - generic [ref=e64]: 🛡️
+          - generic [ref=e65]:
+            - heading "Official Meta API" [level=3] [ref=e66]
+            - paragraph [ref=e67]: Uses the official Instagram Graph API. No scraping, no third-party hacks — your account stays safe.
+    - generic [ref=e69]:
+      - heading "Simple, flat pricing" [level=2] [ref=e70]
+      - paragraph [ref=e71]: No per-contact fees. No surprises. Cancel anytime.
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - heading "Free" [level=3] [ref=e74]
+          - paragraph [ref=e75]: ₹0forever
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - generic [ref=e78]: ✓
+              - text: 300 DMs/month
+            - listitem [ref=e79]:
+              - generic [ref=e80]: ✓
+              - text: 1 account
+            - listitem [ref=e81]:
+              - generic [ref=e82]: ✓
+              - text: Keyword trigger
+            - listitem [ref=e83]:
+              - generic [ref=e84]: ✓
+              - text: Fixed template DMs
+          - link "Get started" [ref=e85] [cursor=pointer]:
+            - /url: https://app.commenthook.com/register
+        - generic [ref=e86]:
+          - heading "Starter" [level=3] [ref=e87]
+          - paragraph [ref=e88]: ₹499/month
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - generic [ref=e91]: ✓
+              - text: 5,000 DMs/month
+            - listitem [ref=e92]:
+              - generic [ref=e93]: ✓
+              - text: 1 account
+            - listitem [ref=e94]:
+              - generic [ref=e95]: ✓
+              - text: AI-generated DMs
+            - listitem [ref=e96]:
+              - generic [ref=e97]: ✓
+              - text: Follow-gate
+            - listitem [ref=e98]:
+              - generic [ref=e99]: ✓
+              - text: Old post activation
+          - link "Get started" [ref=e100] [cursor=pointer]:
+            - /url: https://app.commenthook.com/register
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: Most popular
+          - heading "Pro" [level=3] [ref=e103]
+          - paragraph [ref=e104]: ₹999/month
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - generic [ref=e107]: ✓
+              - text: 25,000 DMs/month
+            - listitem [ref=e108]:
+              - generic [ref=e109]: ✓
+              - text: 3 accounts
+            - listitem [ref=e110]:
+              - generic [ref=e111]: ✓
+              - text: Multi-turn AI lead gating
+            - listitem [ref=e112]:
+              - generic [ref=e113]: ✓
+              - text: Email capture in DM
+            - listitem [ref=e114]:
+              - generic [ref=e115]: ✓
+              - text: Viral slow-mode
+          - link "Get started" [ref=e116] [cursor=pointer]:
+            - /url: https://app.commenthook.com/register
+        - generic [ref=e117]:
+          - heading "Business" [level=3] [ref=e118]
+          - paragraph [ref=e119]: ₹2,499/month
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - generic [ref=e122]: ✓
+              - text: Unlimited DMs
+            - listitem [ref=e123]:
+              - generic [ref=e124]: ✓
+              - text: 10 accounts
+            - listitem [ref=e125]:
+              - generic [ref=e126]: ✓
+              - text: Custom AI persona
+            - listitem [ref=e127]:
+              - generic [ref=e128]: ✓
+              - text: Full analytics
+            - listitem [ref=e129]:
+              - generic [ref=e130]: ✓
+              - text: Priority support
+          - link "Get started" [ref=e131] [cursor=pointer]:
+            - /url: https://app.commenthook.com/register
+    - generic [ref=e132]:
+      - heading "Ready to automate your comments?" [level=2] [ref=e133]
+      - paragraph [ref=e134]: Join creators already using CommentHook to turn comments into customers.
+      - link "Start for free" [ref=e135] [cursor=pointer]:
+        - /url: https://app.commenthook.com/register
+  - contentinfo [ref=e136]:
+    - generic [ref=e137]:
+      - generic [ref=e138]: © 2026 CommentHook. All rights reserved.
+      - generic [ref=e139]:
+        - link "Privacy" [ref=e140] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e141] [cursor=pointer]:
+          - /url: /terms

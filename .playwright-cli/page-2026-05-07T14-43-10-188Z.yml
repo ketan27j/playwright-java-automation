@@ -1,0 +1,241 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "CommentHook CommentHook" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "CommentHook" [ref=e5]
+        - generic [ref=e6]: CommentHook
+      - navigation [ref=e7]:
+        - link "Pricing" [ref=e8] [cursor=pointer]:
+          - /url: /#pricing
+        - link "Blog" [ref=e9] [cursor=pointer]:
+          - /url: /blog
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Terms of Service" [level=1] [ref=e12]
+      - paragraph [ref=e13]: "Last updated: May 3, 2026"
+      - paragraph [ref=e14]: These Terms of Service ("Terms") govern your access to and use of CommentHook ("we", "us", "our", "the Service"). By creating an account or using the Service, you agree to be bound by these Terms. If you do not agree, do not use CommentHook.
+      - heading "1. Description of Service" [level=2] [ref=e15]
+      - paragraph [ref=e16]: CommentHook is an Instagram DM automation platform. It listens for keywords in post comments, live comments, direct messages, and story replies via Meta webhooks, and sends automated direct messages to users on your behalf using the Meta Graph API. The Service may also post public comment replies and embed tracked short links in DMs.
+      - heading "2. Eligibility" [level=2] [ref=e17]
+      - paragraph [ref=e18]: You must be at least 13 years old to use CommentHook. By using the Service, you represent that you meet this age requirement. If you are using the Service on behalf of a business, you represent that you have the authority to bind that business to these Terms.
+      - heading "3. Accounts" [level=2] [ref=e19]
+      - list [ref=e20]:
+        - listitem [ref=e21]: You are responsible for providing accurate registration information and keeping it up to date.
+        - listitem [ref=e22]: You are responsible for maintaining the confidentiality of your password and for all activity that occurs under your account.
+        - listitem [ref=e23]:
+          - text: Notify us immediately at
+          - link "support@commenthook.com" [ref=e24] [cursor=pointer]:
+            - /url: mailto:support@commenthook.com
+          - text: if you suspect unauthorized access to your account.
+        - listitem [ref=e25]: You may not share your account credentials or allow others to access your account.
+      - heading "4. Connecting Instagram Accounts" [level=2] [ref=e26]
+      - paragraph [ref=e27]: "To use CommentHook, you must connect at least one Instagram Business or Creator account via Meta OAuth. By connecting an account:"
+      - list [ref=e28]:
+        - listitem [ref=e29]: You confirm that you own or have explicit written permission to manage that Instagram account for automation purposes.
+        - listitem [ref=e30]: You authorize CommentHook to send DMs, post comment replies, subscribe to webhooks, and access basic account metadata on your behalf.
+        - listitem [ref=e31]: You acknowledge that your Instagram access token will be stored encrypted on our servers.
+      - heading "5. Permitted Use" [level=2] [ref=e32]
+      - paragraph [ref=e33]: "CommentHook may only be used to:"
+      - list [ref=e34]:
+        - listitem [ref=e35]: Automate DMs and comment replies on Instagram accounts you own or are authorized to manage.
+        - listitem [ref=e36]: Engage with users who have organically interacted with your content (comments, DMs, story replies).
+        - listitem [ref=e37]: Run legitimate marketing and customer service automations that comply with Meta's policies.
+      - heading "6. Prohibited Use" [level=2] [ref=e38]
+      - paragraph [ref=e39]: "You may not use CommentHook to:"
+      - list [ref=e40]:
+        - listitem [ref=e41]: Send spam, bulk unsolicited messages, or commercial messages to users who have not initiated contact.
+        - listitem [ref=e42]: Harass, abuse, threaten, defame, or discriminate against any person.
+        - listitem [ref=e43]: Impersonate another person, brand, or entity.
+        - listitem [ref=e44]:
+          - text: Violate Meta's
+          - link "Terms of Service" [ref=e45] [cursor=pointer]:
+            - /url: https://www.facebook.com/terms.php
+          - text: ","
+          - link "Community Standards" [ref=e46] [cursor=pointer]:
+            - /url: https://www.facebook.com/communitystandards/
+          - text: ", or"
+          - link "Platform Terms" [ref=e47] [cursor=pointer]:
+            - /url: https://developers.facebook.com/policy/
+          - text: .
+        - listitem [ref=e48]: Circumvent Meta's rate limits, spam filters, or platform policies.
+        - listitem [ref=e49]: Automate accounts you do not own or do not have explicit permission to manage.
+        - listitem [ref=e50]: Collect, harvest, or store personal data of Instagram users beyond what is needed to operate your automations.
+        - listitem [ref=e51]: Resell or sublicense access to the Service without our written consent.
+        - listitem [ref=e52]: Attempt to reverse-engineer, decompile, or extract the source code of the Service.
+        - listitem [ref=e53]: Use the Service for any illegal purpose or in violation of any applicable law.
+        - listitem [ref=e54]: Create, assist with, or promote fake or bot accounts on Instagram or any platform.
+        - listitem [ref=e55]: Interfere with other users' accounts, automations, or use of the Service.
+        - listitem [ref=e56]: Send automated messages containing sexually explicit content, content promoting violence or illegal activity, hate speech, or discriminatory content.
+        - listitem [ref=e57]: Use the Service in connection with pyramid schemes, multi-level marketing (MLM), or other fraudulent business schemes.
+        - listitem [ref=e58]: Send messages containing misleading medical or legal advice, phishing attempts, or links to malware or deceptive websites.
+      - heading "7. Content Moderation Policy" [level=2] [ref=e59]
+      - paragraph [ref=e60]: "CommentHook reserves the right to review automated messages and automations for compliance with these Terms and applicable laws. Automated messages and automations must not contain:"
+      - list [ref=e61]:
+        - listitem [ref=e62]: Sexually explicit, pornographic, or adult content.
+        - listitem [ref=e63]: Content promoting, glorifying, or encouraging violence, illegal activity, self-harm, or suicide.
+        - listitem [ref=e64]: Hate speech, slurs, or content discriminating based on protected characteristics (race, gender, religion, sexual orientation, disability, etc.).
+        - listitem [ref=e65]: Misleading medical advice, health claims, or diagnostic statements.
+        - listitem [ref=e66]: Misleading legal advice from unlicensed individuals.
+        - listitem [ref=e67]: Copyright-infringing, trademarked, or plagiarized content.
+        - listitem [ref=e68]: Phishing attempts, social engineering, or requests for sensitive information.
+        - listitem [ref=e69]: Links to malware, spyware, ransomware, or other malicious software.
+        - listitem [ref=e70]: Deceptive links, URL shorteners used to hide destination, or "link cloaking."
+      - paragraph [ref=e71]:
+        - text: CommentHook may disable automations violating this policy without prior notice. Repeated violations may result in account suspension or termination. If you believe an automation violates this policy, please report it to
+        - link "support@commenthook.com" [ref=e72] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: .
+      - heading "8. Meta Platform Compliance" [level=2] [ref=e73]
+      - paragraph [ref=e74]: "CommentHook uses official Instagram APIs and is subject to Meta's Platform Terms. You acknowledge that:"
+      - list [ref=e75]:
+        - listitem [ref=e76]: Meta may change its API policies, rate limits, or permissions at any time. We are not liable for any loss of functionality resulting from such changes.
+        - listitem [ref=e77]: Your use of the Service must comply with all applicable Meta policies at all times.
+        - listitem [ref=e78]: Meta retains the right to suspend or restrict any Instagram account for any reason. CommentHook is not responsible for account actions taken by Meta.
+        - listitem [ref=e79]:
+          - text: You agree to comply with Meta's
+          - link "Terms of Service" [ref=e80] [cursor=pointer]:
+            - /url: https://www.facebook.com/terms.php
+          - text: ","
+          - link "Community Standards" [ref=e81] [cursor=pointer]:
+            - /url: https://www.facebook.com/communitystandards/
+          - text: ", and"
+          - link "Platform Policies" [ref=e82] [cursor=pointer]:
+            - /url: https://developers.facebook.com/policy/
+          - text: at all times.
+      - heading "9. Third-Party Services" [level=2] [ref=e83]
+      - paragraph [ref=e84]: "CommentHook relies on third-party service providers including payment processors (Stripe for international payments, Razorpay for Indian payments) and Meta (for API access). CommentHook is not liable for:"
+      - list [ref=e85]:
+        - listitem [ref=e86]: Failures, outages, service disruptions, or policy changes by payment processors or Meta.
+        - listitem [ref=e87]: Errors, fraud, or unauthorized transactions by payment processors.
+        - listitem [ref=e88]: Data breaches or security incidents at third-party services.
+        - listitem [ref=e89]: Loss of access to the Service due to third-party service failures.
+      - paragraph [ref=e90]: You agree to comply with the Terms of Service of all third-party providers (Stripe, Razorpay, Meta) and acknowledge that their policies apply to your use of their services. Any disputes with third-party providers should be addressed directly with them.
+      - heading "10. Subscriptions and Payment" [level=2] [ref=e91]
+      - heading "10a. Plans and billing" [level=3] [ref=e92]
+      - paragraph [ref=e93]: CommentHook offers a free plan and paid subscription plans. Paid plans are billed monthly or annually — international payments are processed via Stripe, and Indian payments via Razorpay. By subscribing, you authorize us to charge your payment method on a recurring basis until you cancel.
+      - heading "10b. Price changes" [level=3] [ref=e94]
+      - paragraph [ref=e95]: We will give you at least 30 days' notice before changing the price of your current subscription plan. Continued use after the effective date constitutes acceptance of the new price.
+      - heading "10c. Cancellation" [level=3] [ref=e96]
+      - paragraph [ref=e97]: You may cancel your subscription at any time from the Billing section of your account Settings. Cancellation takes effect at the end of the current billing period. You will retain access to paid features until that date.
+      - heading "10d. Refunds" [level=3] [ref=e98]
+      - paragraph [ref=e99]:
+        - text: All fees are non-refundable except where required by applicable law. If you believe you were charged in error, contact
+        - link "support@commenthook.com" [ref=e100] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: within 14 days of the charge.
+      - heading "10e. Free plan limits" [level=3] [ref=e101]
+      - paragraph [ref=e102]: The free plan includes a "Sent via CommentHook" watermark appended to all automated DMs and is subject to DM volume limits as described on the pricing page. We reserve the right to modify free plan limits at any time.
+      - heading "11. Service Availability & Data Breach Notification" [level=2] [ref=e103]
+      - paragraph [ref=e104]: "We aim for high availability but do not guarantee uninterrupted access to the Service. We are not liable for:"
+      - list [ref=e105]:
+        - listitem [ref=e106]: DMs not sent due to Meta API outages, rate limits, or policy enforcement.
+        - listitem [ref=e107]: Temporary service downtime for maintenance or infrastructure upgrades.
+        - listitem [ref=e108]: Data loss caused by events beyond our reasonable control (force majeure).
+      - paragraph [ref=e109]:
+        - strong [ref=e110]: "Data Breach Notification:"
+        - text: In the event of a data breach involving user data, CommentHook will notify affected users within 72 hours via email at the address associated with their account. The notification will include details of the breach, the information affected, steps being taken to remediate, and recommended user actions (such as changing passwords or enabling two-factor authentication).
+      - heading "12. Data Retention and Deletion" [level=2] [ref=e111]
+      - paragraph [ref=e112]: "CommentHook retains user data according to the following schedule:"
+      - list [ref=e113]:
+        - listitem [ref=e114]:
+          - strong [ref=e115]: "Account data (profile, settings, connected Instagram accounts):"
+          - text: Retained while your account is active.
+        - listitem [ref=e116]:
+          - strong [ref=e117]: "Automation logs and execution history:"
+          - text: Retained for 90 days, then deleted.
+        - listitem [ref=e118]:
+          - strong [ref=e119]: "DM history and message logs:"
+          - text: "Retained per your preference in Settings. Default: messages are deleted after 180 days."
+        - listitem [ref=e120]:
+          - strong [ref=e121]: "Payment records and billing history:"
+          - text: Retained for 7 years as required by applicable tax and accounting laws.
+        - listitem [ref=e122]:
+          - strong [ref=e123]: "Support tickets and communications:"
+          - text: Retained for 2 years.
+      - paragraph [ref=e124]:
+        - strong [ref=e125]: "Upon account deletion:"
+        - text: All user data will be deleted within 30 days of account termination, except where retention is required by applicable law (such as payment records for tax purposes). You may request export of your data in CSV format at any time before deletion by contacting
+        - link "support@commenthook.com" [ref=e126] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: .
+      - heading "13. Data Portability and Export" [level=2] [ref=e127]
+      - paragraph [ref=e128]: "You have the right to request export of your CommentHook data at any time. Available exports include:"
+      - list [ref=e129]:
+        - listitem [ref=e130]: Automation templates and configurations
+        - listitem [ref=e131]: Automation execution logs and history
+        - listitem [ref=e132]: Message templates and responses
+        - listitem [ref=e133]: DM conversation history
+      - paragraph [ref=e134]:
+        - text: Exported data will be provided in CSV or JSON format within 30 days of your request. To request a data export, contact
+        - link "support@commenthook.com" [ref=e135] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: .
+      - heading "14. Security & Compliance" [level=2] [ref=e136]
+      - paragraph [ref=e137]: "CommentHook employs industry-standard security measures to protect user data:"
+      - list [ref=e138]:
+        - listitem [ref=e139]: TLS/SSL encryption for all data in transit between your browser/app and our servers.
+        - listitem [ref=e140]: AES-256 encryption for sensitive data at rest (including Instagram access tokens).
+        - listitem [ref=e141]: OAuth 2.0 authentication to prevent password exposure to third parties.
+        - listitem [ref=e142]: Regular security audits and penetration testing.
+        - listitem [ref=e143]: GDPR compliance for users in the European Union.
+        - listitem [ref=e144]: Compliance with India's Digital Personal Data Protection Act (DPDP) and the Information Technology Act.
+        - listitem [ref=e145]: Compliance with CAN-SPAM Act requirements for automated marketing messages.
+      - paragraph [ref=e146]:
+        - strong [ref=e147]: "Two-Factor Authentication:"
+        - text: We strongly recommend enabling two-factor authentication (2FA) on your CommentHook account for enhanced security. Instructions are available in Account Settings.
+      - heading "15. Brand Use and Customer References" [level=2] [ref=e148]
+      - paragraph [ref=e149]: By using CommentHook, you grant us a non-exclusive license to use your company name, logo, and publicly available metrics (such as follower count, engagement rate) in our marketing materials, customer lists, case studies, and pitch decks to indicate that you use CommentHook's services. This use will comply with your brand guidelines.
+      - paragraph [ref=e150]:
+        - text: You may opt out of this use at any time by emailing
+        - link "support@commenthook.com" [ref=e151] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: . Opt-out requests will be honored within 30 days.
+      - heading "16. Intellectual Property" [level=2] [ref=e152]
+      - paragraph [ref=e153]: All software, design, content, and trademarks associated with CommentHook are owned by us or our licensors. You may not copy, modify, distribute, sell, or create derivative works from any part of the Service without our prior written consent. Nothing in these Terms grants you any ownership rights in the Service.
+      - paragraph [ref=e154]: You retain all rights to your own content (automation templates, AI product descriptions, and messages). By using the Service, you grant us a limited license to process and transmit that content solely to operate the Service on your behalf.
+      - heading "17. Limitation of Liability" [level=2] [ref=e155]
+      - paragraph [ref=e156]: "To the maximum extent permitted by applicable law:"
+      - list [ref=e157]:
+        - listitem [ref=e158]: CommentHook is provided "as is" without warranties of any kind, express or implied.
+        - listitem [ref=e159]: We are not responsible for any Instagram account suspension, restriction, or ban resulting from your use of the Service, regardless of whether your use was within these Terms.
+        - listitem [ref=e160]: Our total aggregate liability to you for any claims arising from your use of the Service is limited to the amount you paid us in the 12 months preceding the claim.
+        - listitem [ref=e161]: We are not liable for any indirect, incidental, consequential, punitive, or special damages, including lost profits or lost data, even if we have been advised of the possibility of such damages.
+      - heading "18. Indemnification" [level=2] [ref=e162]
+      - paragraph [ref=e163]: "You agree to indemnify, defend, and hold harmless CommentHook and its directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable legal fees) arising from: (a) your use of the Service; (b) your violation of these Terms; (c) your violation of any third-party rights, including Meta's platform policies; (d) any content you transmit through the Service; or (e) any automations or messages you create using the Service."
+      - heading "19. Termination" [level=2] [ref=e164]
+      - paragraph [ref=e165]: We may suspend or terminate your account at any time, with or without notice, if we believe you have violated these Terms, engaged in fraudulent activity, or if your use poses a risk to other users or the Service. You may terminate your account at any time from Settings. Upon termination, your data will be deleted in accordance with our Privacy Policy and the data retention schedule in Section 12.
+      - heading "20. Dispute Resolution and Governing Law" [level=2] [ref=e166]
+      - paragraph [ref=e167]: "These Terms are governed by the laws of India, without regard to its conflict of law provisions. Any dispute arising from these Terms or your use of the Service shall be resolved as follows:"
+      - list [ref=e168]:
+        - listitem [ref=e169]:
+          - strong [ref=e170]: "Step 1 - Amicable Resolution:"
+          - text: First, attempt to resolve the dispute amicably by contacting
+          - link "support@commenthook.com" [ref=e171] [cursor=pointer]:
+            - /url: mailto:support@commenthook.com
+          - text: with a detailed description of your issue. We will respond within 14 days.
+        - listitem [ref=e172]:
+          - strong [ref=e173]: "Step 2 - Escalation:"
+          - text: If unresolved within 30 days, either party may initiate binding arbitration.
+        - listitem [ref=e174]:
+          - strong [ref=e175]: "Arbitration:"
+          - text: Any dispute shall be resolved through binding arbitration administered by the Indian Council of Arbitration (ICA) under its Arbitration and Conciliation Rules. The arbitration shall be conducted in English. The arbitrator's decision is final and binding. Each party shall bear its own costs, with arbitration fees split equally between parties.
+        - listitem [ref=e176]:
+          - strong [ref=e177]: "Class Action Waiver:"
+          - text: Both parties agree to waive the right to participate in class action lawsuits. All disputes must be resolved on an individual basis.
+      - heading "21. Changes to These Terms" [level=2] [ref=e178]
+      - paragraph [ref=e179]: We may update these Terms from time to time. We will notify you of material changes by email and by updating the "Last updated" date above. Continued use of the Service after the effective date of updated Terms constitutes your acceptance of the changes.
+      - heading "22. Contact" [level=2] [ref=e180]
+      - paragraph [ref=e181]:
+        - text: Questions about these Terms? Email us at
+        - link "support@commenthook.com" [ref=e182] [cursor=pointer]:
+          - /url: mailto:support@commenthook.com
+        - text: . We will respond to your inquiry within 14 business days.
+  - contentinfo [ref=e183]:
+    - generic [ref=e184]:
+      - generic [ref=e185]: © 2026 CommentHook. All rights reserved.
+      - generic [ref=e186]:
+        - link "Privacy" [ref=e187] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e188] [cursor=pointer]:
+          - /url: /terms

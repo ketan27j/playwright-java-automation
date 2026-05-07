@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "CommentHook CommentHook" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "CommentHook" [ref=e5]
+        - generic [ref=e6]: CommentHook
+      - navigation [ref=e7]:
+        - link "Pricing" [ref=e8] [cursor=pointer]:
+          - /url: /#pricing
+        - link "Blog" [ref=e9] [cursor=pointer]:
+          - /url: /blog
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: From the blog
+        - heading "Instagram growth, tips & tactics." [level=1] [ref=e14]:
+          - text: Instagram growth,
+          - text: tips & tactics.
+      - link "Featured 20 Apr 2026 How to Auto-Reply to Instagram Comments and Send DMs Automatically Step-by-step guide to setting up Instagram comment automation — keyword triggers, automatic DMs, and follow-gate using the official Instagram API. Read article" [ref=e15] [cursor=pointer]:
+        - /url: /blog/how-to-auto-reply-instagram-comments
+        - generic [ref=e16]:
+          - generic [ref=e17]: Featured
+          - generic [ref=e18]: 20 Apr 2026
+        - heading "How to Auto-Reply to Instagram Comments and Send DMs Automatically" [level=2] [ref=e19]
+        - paragraph [ref=e20]: Step-by-step guide to setting up Instagram comment automation — keyword triggers, automatic DMs, and follow-gate using the official Instagram API.
+        - generic [ref=e21]:
+          - text: Read article
+          - img [ref=e22]
+      - generic [ref=e24]:
+        - link "10 Apr 2026 ManyChat Alternatives for Indian Creators in 2026 ManyChat charges in USD and scales with contact count — here are the best affordable ManyChat alternatives for Indian Instagram creators." [ref=e25] [cursor=pointer]:
+          - /url: /blog/manychat-alternatives-india
+          - generic [ref=e26]:
+            - paragraph [ref=e27]: 10 Apr 2026
+            - heading "ManyChat Alternatives for Indian Creators in 2026" [level=2] [ref=e28]
+            - paragraph [ref=e29]: ManyChat charges in USD and scales with contact count — here are the best affordable ManyChat alternatives for Indian Instagram creators.
+          - img [ref=e30]
+        - link "1 Apr 2026 Best Instagram DM Automation Tools in 2026 Compare the top Instagram DM automation tools — ManyChat, LinkDM, CreatorFlow, and CommentHook. Features, pricing, and which is right for Indian creators." [ref=e32] [cursor=pointer]:
+          - /url: /blog/best-instagram-dm-automation-tools-2026
+          - generic [ref=e33]:
+            - paragraph [ref=e34]: 1 Apr 2026
+            - heading "Best Instagram DM Automation Tools in 2026" [level=2] [ref=e35]
+            - paragraph [ref=e36]: Compare the top Instagram DM automation tools — ManyChat, LinkDM, CreatorFlow, and CommentHook. Features, pricing, and which is right for Indian creators.
+          - img [ref=e37]
+  - contentinfo [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e41]: © 2026 CommentHook. All rights reserved.
+      - generic [ref=e42]:
+        - link "Privacy" [ref=e43] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e44] [cursor=pointer]:
+          - /url: /terms
