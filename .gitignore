@@ -21,6 +21,7 @@ Thumbs.db
 playwright/.cache/
 playwright/downloads/
 test-results/
+.playwright-cli/
 
 # Allure
 allure-results/
