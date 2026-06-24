@@ -84,3 +84,66 @@ keeps you under the 40% context ceiling.
   strongest coder on @translate and @verify.
 - If a file fails 3 verify rounds, it lands in `migration/errors/` — fix that
   one interactively, mark it `verified` in state.json, continue.
+
+## Migrating batch jobs (console apps, Windows services, Quartz/Hangfire, scheduled tasks)
+
+These do NOT become plain services — they become Spring Batch jobs / @Scheduled.
+For the generated batch code to match your existing jobs, give scan ONE working
+Java batch job to copy:
+
+- When you start the orchestrator, name the reference, e.g.:
+  "Migrate the next batch. .NET source ./DotNetApp, Java target ./java-app,
+   base package com.yourco.app. Reference batch job to imitate:
+   ./java-app/src/main/java/com/yourco/app/batch/InvoiceSyncJob.java"
+- scan reads that file FULLY, records its exact shape (chunk vs Tasklet,
+  reader/processor/writer, JobRepository/tx wiring, trigger, chunk size, naming,
+  and the Spring Batch API version it uses) into migration/java-conventions.md.
+- translate then copies that shape for every batch-layer file instead of
+  inventing a generic (possibly wrong-version) Spring Batch style.
+
+If scan finds batch-layer .NET files but you gave no reference AND the repo has
+no existing batch job, it flags this and you should supply a reference before
+translating those files — otherwise the batch output is a guess.
+
+## Deep batch-job pipeline (separate from the bulk migration)
+
+Batch jobs run through a richer, quality-gated pipeline instead of the simple
+translate→verify loop, because they're logic-dense and a generic Spring Batch
+shape rarely matches your repo.
+
+Pipeline per file (one file fully through before the next):
+1. **Reference analyzer** (once) reads your reference batch job + existing tests →
+   `migration/batch-template.md` (canonical job shape + detected test harness).
+2. **Plan** — reads the .NET job fully → `migration/plans/<Job>.plan.md`: purpose,
+   trigger, full business-logic breakdown, Spring Batch mapping, and test scenarios
+   derived from the .NET source.
+3. **Translate** — writes the Java job from the plan, copying the reference shape.
+4. **Build** (objective gate) — compile + fix, max 3 rounds.
+5. **Review → Fix** (loop, max 2) — reviewer scores the Java against the plan + a
+   fixed rubric, writes findings into the plan; fixer resolves them; build re-runs
+   after every fix.
+6. **Test** (objective gate) — tests derived from the .NET source + plan (never from
+   the Java output, so they aren't tautological), run, one fix round on failure.
+
+Each file's `stage` (pending → planned → translated → built → reviewed → tested →
+done, or needs-human) lives in `migration/state.json`, so sessions are disposable
+and each subagent runs in a fresh context.
+
+### Run it
+- OpenCode: switch to the `batch-migrate` agent (or `/migrate-batch <reference-path>`).
+- RooCode: switch to 🧭 Batch Pipeline Orchestrator; tell it the reference batch
+  job path and let it delegate via new_task. Bind your strongest local model to the
+  reviewer and test-writer modes — those are the hardest for small models.
+
+### Guardrails that make the gates meaningful
+- The test-writer derives expected values from the plan/source, NOT the Java code.
+- The fixer is forbidden from weakening a test or deleting logic to pass a check;
+  build re-runs after every fix so a "green" review/test can't hide a broken build.
+- Non-convergence (build fails after 3, review after 2, test after 1 fix) → the file
+  is marked `needs-human` and the pipeline moves on rather than looping forever.
+
+### Golden-sample hook (optional, strongest check)
+If you can ever run the legacy .NET job, drop input + expected-output fixtures in
+`migration/golden/<JobName>/`. The test-writer will then assert byte-for-byte
+parity — the only thing that reliably catches rounding/ordering/null drift. Without
+it, tests assert plan-derived expected behavior (good, but not parity-proven).

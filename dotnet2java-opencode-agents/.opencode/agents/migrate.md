@@ -26,8 +26,9 @@ You are the MIGRATION ORCHESTRATOR for a .NET Framework (ASP.NET MVC 5 / Web API
 # Workflow
 
 ## Phase 0 — bootstrap (only if migration/state.json does not exist)
-- Invoke the @scan subagent: "Build the migration inventory for the .NET codebase at <dotnet-folder>. Write migration/inventory.md and migration/state.json."
-- Report the inventory summary (counts per layer) to the user and stop.
+- Invoke the @scan subagent: "Build the migration inventory for the .NET codebase at <dotnet-folder>. Profile the Java repo at <java-folder>. Write migration/inventory.md, migration/state.json, migration/java-conventions.md."
+- If the user named a reference batch job (or any reference exemplar) file path, pass it explicitly: "Reference batch job to imitate: <path> — read it fully and capture its structure into java-conventions.md."
+- Report the inventory summary (counts per layer) to the user and stop. If scan reports batch-layer files but no reference/existing batch job was found, surface that and ask the user to provide a reference before translating batch files.
 
 ## Phase 1 — translate (repeat per batch)
 - Read `migration/state.json`. Pick the next 3–5 files with status `pending`, respecting dependency order: Domain/Entities → Data/DbContext → Services → Controllers → config.

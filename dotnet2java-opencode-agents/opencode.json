@@ -8,9 +8,15 @@
         "baseURL": "http://localhost:11434/v1"
       },
       "models": {
-        "qwen3-coder": { "name": "Qwen3 Coder (local)" },
-        "gpt-oss:20b": { "name": "GPT-OSS 20B (local)" },
-        "gemma3:27b": { "name": "Gemma 3 27B (local)" }
+        "qwen3-coder": {
+          "name": "Qwen3 Coder (local)"
+        },
+        "gpt-oss:20b": {
+          "name": "GPT-OSS 20B (local)"
+        },
+        "gemma3:27b": {
+          "name": "Gemma 3 27B (local)"
+        }
       }
     }
   },
@@ -25,6 +31,30 @@
       "model": "ollama/qwen3-coder"
     },
     "verify": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-migrate": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-reference-analyzer": {
+      "model": "ollama/gpt-oss:20b"
+    },
+    "batch-planner": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-translator": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-builder": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-reviewer": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-fixer": {
+      "model": "ollama/qwen3-coder"
+    },
+    "batch-test-writer": {
       "model": "ollama/qwen3-coder"
     }
   }

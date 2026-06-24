@@ -4,6 +4,25 @@ These rules are authoritative. Apply the section matching the file's layer.
 (Condensed for small-model use — keep this file under ~250 lines. Extend it
 with project-specific decisions as they are made; it is the single source of truth.)
 
+## Layer: batch (console apps, Windows services, Quartz/Hangfire, scheduled tasks)
+
+The reference/existing batch job captured in `migration/java-conventions.md` is AUTHORITATIVE for exact API, bean wiring, and Spring Batch version — copy that shape. This table is only the conceptual mapping:
+
+| .NET | Java (Spring Batch / scheduling) |
+|---|---|
+| Console app `static Main` doing a unit of work | one Spring Batch `Job` with one or more `Step`s |
+| read source → transform → persist loop | chunk-oriented step: `ItemReader` → `ItemProcessor` → `ItemWriter` |
+| single non-chunked action (cleanup, call, move file) | `Tasklet` step |
+| Windows Service / `Timer` / `while(true){ ...; Sleep }` | `@Scheduled(cron=...)` triggering the job, OR an external scheduler launching it — match the reference |
+| Quartz `IJob.Execute` | the job's trigger mechanism in the reference (`@Scheduled` or a launcher) |
+| Hangfire `RecurringJob.AddOrUpdate` | scheduled trigger per reference |
+| job arguments / config values | `JobParameters` (per reference) — not hard-coded |
+| manual transaction around the batch | step-level chunk transaction (`PlatformTransactionManager`) per reference |
+| restart / "skip bad row & continue" logic | skip/retry policy on the step per reference; do NOT silently drop the logic |
+| progress logging / row counts | `StepExecutionListener` / `ItemWriteListener` per reference |
+
+Rules: do NOT translate a batch job into a plain `@Service` with a `for` loop unless the reference does exactly that. Preserve the read-process-write boundaries and the commit/chunk semantics — getting chunk size or transaction boundaries wrong changes restart and memory behaviour. Keep all business logic (filtering, ordering, dedup, rounding) identical. Flag anything the reference doesn't cover with `// TODO-MIGRATION: batch — <reason>`.
+
 ## Layer: domain (POCO entities)
 
 | C# (EF6) | Java (JPA / Spring Boot 3) |
