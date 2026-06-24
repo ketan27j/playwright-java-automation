@@ -1,0 +1,31 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3-coder": { "name": "Qwen3 Coder (local)" },
+        "gpt-oss:20b": { "name": "GPT-OSS 20B (local)" },
+        "gemma3:27b": { "name": "Gemma 3 27B (local)" }
+      }
+    }
+  },
+  "agent": {
+    "migrate": {
+      "model": "ollama/qwen3-coder"
+    },
+    "scan": {
+      "model": "ollama/gpt-oss:20b"
+    },
+    "translate": {
+      "model": "ollama/qwen3-coder"
+    },
+    "verify": {
+      "model": "ollama/qwen3-coder"
+    }
+  }
+}
